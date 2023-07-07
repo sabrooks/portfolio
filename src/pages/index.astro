@@ -1,15 +1,95 @@
 ---
+import Header from "../components/Header.astro";
+import SkillCard from "../components/SkillCard.astro";
+import ProjectList from "../components/ProjectsList.astro";
+
+import "../styles/global.css";
 ---
 
+<!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Landing Page</title>
+		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<div class="container">
+			<Header />
+
+			<section id="home">
+				<div class="hero">
+					<div>
+						<h1>Hero Headline</h1>
+						<p>Hero Subheadline</p>
+					</div>
+				</div>
+			</section>
+			<div class="content">
+				<section id="skills">
+					<h2>Skills</h2>
+					<div class="skill-cards">
+						<SkillCard
+							skill="Time Series Data Analysis"
+							description="Forecasting and Classification of Time Series Data"
+						/>
+						<SkillCard
+							skill="Machine Data Analysis"
+							description="Diagnostic Analysis of Machine Data"
+						/>
+						<SkillCard
+							skill="Python Programming"
+							description="Python Programming for Data Analysis and Cloud Computing"
+						/>
+						<SkillCard
+							skill="Databases"
+							description="Organizing and Querying Data in Relational and Non-Relational Databases"
+						/>
+					</div>
+				</section>
+			</div>
+
+			<section id="projects">
+				<h2>Projects</h2>
+				<ProjectList />
+			</section>
+
+			<footer></footer>
+			<style>
+				.hero {
+					background-color: #f0f0f0;
+					padding: 2rem;
+					text-align: center;
+					display: grid;
+					height: 500px;
+					align-items: center;
+				}
+
+				.skills {
+					display: grid;
+
+					gap: 2rem;
+				}
+				.skill-cards {
+					display: grid;
+					grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+					gap: 2rem;
+				}
+				.projects {
+					display: grid;
+					grid-template-columns: repeat(3, 1fr);
+					gap: 2rem;
+				}
+				.container {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+				}
+				.content {
+					max-width: 1200px;
+				}
+			</style>
+		</div>
 	</body>
 </html>

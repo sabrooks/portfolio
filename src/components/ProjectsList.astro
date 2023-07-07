@@ -1,0 +1,30 @@
+---
+interface Frontmatter {
+    title: string;
+    description: string;
+}
+const projects = await Astro.glob("../pages/projects/*.md");
+import ProjectCard from "../components/Projects.astro";
+---
+
+<div class="project-list">
+    {
+        projects.map((project) => (
+            <ProjectCard
+                project={project.frontmatter.title}
+                description={project.frontmatter.description}
+                url={project.url}
+            />
+        ))
+    }
+    <ProjectCard
+        project="Project 1"
+        description="Description of Project 1"
+        url="#"
+    />
+    <ProjectCard
+        project="Project 2"
+        description="Description of Project 2"
+        url="#"
+    />
+</div>
