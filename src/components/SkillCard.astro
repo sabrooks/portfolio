@@ -1,8 +1,9 @@
 ---
-const { skill, description } = Astro.props;
+const { skill, description, image } = Astro.props;
 ---
 
 <div class="skill-card">
+    <img src={image} alt={skill} width="100px" />
     <h3>{skill}</h3>
     <p>{description}</p>
 </div>
