@@ -3,7 +3,7 @@ import Navigation from "./Navigation.astro";
 ---
 
 <header>
-    <a href="."><h1>SABROOKS.com</h1></a>
+    <a href="."><h1 class="logo">sabrooks</h1></a>
     <Navigation />
 </header>
 <style>
@@ -12,5 +12,9 @@ import Navigation from "./Navigation.astro";
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+    }
+    .logo {
+        margin: 0;
+        font-weight: 900;
     }
 </style>
